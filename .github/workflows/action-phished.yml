@@ -1,0 +1,10 @@
+name: Generic enterprise workflow
+on:
+  workflow_dispatch:
+  
+jobs:
+  Run-command-with-injected-secret:
+    name: Run echo with a secret
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ secrets.LOGIN_TOKEN }}
