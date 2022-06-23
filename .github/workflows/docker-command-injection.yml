@@ -1,0 +1,11 @@
+name: Injecting malicious Docker image
+on:
+  workflow_dispatch:
+
+jobs:
+  Run-docker-image:
+    name: Run npm on Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "this is a placeholder"
