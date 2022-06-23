@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ls -la && pwd && whoami && docker build actions-phishing-demo/docker-command-injectino . -t malicious-image:latest
+      - run: ls -la && pwd && whoami && docker build -t malicious-image:latest docker-command-injectino
       - uses: addnab/docker-run-action@v3
         with:
           image: malicious-image:latest
