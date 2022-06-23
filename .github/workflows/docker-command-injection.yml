@@ -4,8 +4,15 @@ on:
 
 jobs:
   Run-docker-image:
-    name: Run npm on Ubuntu
+    name: Run docker image
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: echo "this is a placeholder"
+      - uses: docker/build-push-action@v3
+        with:
+          tags: malicious-image:latest
+          context: "{{defaultContext}}:docker-command-injectino"
+          push: false
+      - uses: addnab/docker-run-action@v3
+        with:
+          image: malicious-image:latest
