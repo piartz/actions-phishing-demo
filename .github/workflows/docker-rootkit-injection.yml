@@ -1,0 +1,15 @@
+name: Injecting malicious Docker image
+on:
+  workflow_dispatch:
+
+jobs:
+  Run-docker-image:
+    name: Run docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: docker build -t malicious-image:latest docker-command-injectino
+      - uses: addnab/docker-run-action@v3
+        with:
+          image: malicious-image:latest
+          run: whoami
