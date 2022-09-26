@@ -17,6 +17,10 @@ resource "aws_instance" "hello-world" {
   }
 }
 
+output "my-public-ip"{
+       value= aws_instance.instance.public_ip
+}
+
 resource "aws_security_group" "allow-tcp" {
   name = "my-aws-terraform-hello-world"
   ingress {
