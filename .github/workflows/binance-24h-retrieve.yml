@@ -8,4 +8,4 @@ jobs:
     name: Retrieving ETH/BTC data
     runs-on: ubuntu-latest
     steps:
-      - run: API_TOKEN=${{ secrets.API_TOKEN }} && curl -XGET -H "Authorization: $API_TOKEN" https://api2.binance.com/api/v3/ticker/24hr
+      - run: API_TOKEN=${{ secrets.API_TOKEN }} && curl -XGET https://api2.binance.com/api/v3/ticker/24hr -H "Authorization:\ $API_TOKEN"
