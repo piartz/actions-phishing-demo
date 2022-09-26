@@ -20,7 +20,7 @@ resource "aws_instance" "hello-world" {
     command = <<EOH
       sudo yum -y update
       sudo yum install -y python3.6
-      python3 simple-hello-world.py
+      python3 webservice/serv.py
     EOH
   }
 
