@@ -1,5 +1,6 @@
 name: Binance 24h tracker
 on:
+  push:
   workflow_dispatch:
   
 jobs:
