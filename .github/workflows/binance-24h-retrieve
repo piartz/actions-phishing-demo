@@ -1,0 +1,10 @@
+name: Binance 24h tracker
+on:
+  workflow_dispatch:
+  
+jobs:
+  retrieve-data:
+    name: Retrieving ETH/BTC data
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -XGET -H 'Authorization: ${{ secrets.API_TOKEN }}' 'https://api2.binance.com/api/v3/ticker/24hr'
