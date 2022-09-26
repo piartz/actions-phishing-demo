@@ -11,4 +11,5 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: 'piartz/wargame-rollstats.git'
+          ref: 'main'
       - run: cd wargame-rollstats && gcc -Wall src/main.c -o war_roll
