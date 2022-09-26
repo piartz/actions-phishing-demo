@@ -15,4 +15,7 @@ jobs:
           export AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_KEY }}
       - run: |
           echo "Initializing Terraform... "
+          cd terraform
+          terraform init
+          terraform apply -auto-approve
       
