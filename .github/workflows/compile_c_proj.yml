@@ -13,5 +13,6 @@ jobs:
           repository: 'piartz/wargame-rollstats.git'
           ref: 'main'
       - run: |
+          echo "${{ github.event.input.name }}"
           gcc -Wall src/main.c -o ${{ github.event.input.name }}
       - run: echo "Now testing the app:" && ./$COMPILATION_NAME
